@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Détail — To‑Do{% endblock %}
+{% block content %}
+  <h2>Détail de la tâche</h2>
+  <div class="card">
+    <p><strong>Titre :</strong> {{ task.title }}</p>
+    <p><strong>Statut :</strong>
+      {% if task.completed %}
+        ✔ Terminée
+      {% else %}
+        ✗ À faire
+      {% endif %}
+    </p>
+    <p class="muted">Créée le {{ task.created_at|date:"d/m/Y H:i" }}</p>
+  </div>
+  <p><a href="/liste/">← Retour à la liste</a></p>
+{% endblock %}

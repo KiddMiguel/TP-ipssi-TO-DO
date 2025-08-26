@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}To‑Do{% endblock %}</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;max-width:860px;margin:40px auto;padding:0 16px;}
+    header,footer{opacity:.8}
+    nav a{margin-right:12px;text-decoration:none}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid #ddd}
+    .done{background:#eafbea}
+    .todo{background:#fff7e6}
+    .card{border:1px solid #eee;border-radius:12px;padding:16px;margin:12px 0}
+    .muted{color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mini‑site To‑Do</h1>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/about/">À propos</a>
+      <a href="/liste/">Liste</a>
+      <a href="/liste_active/">Actives</a>
+    </nav>
+    <p class="muted">Aujourd’hui : {{ today }}</p>
+    <hr>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <hr>
+    <p class="muted">TP Django — Sujet To‑Do</p>
+  </footer>
+</body>
+</html>

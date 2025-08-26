@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Tâches actives — To‑Do{% endblock %}
+{% block content %}
+  <h2>Tâches actives (non terminées)</h2>
+  <p class="muted">Nombre: {{ count }}</p>
+
+  {% if tasks %}
+    <ul>
+      {% for t in tasks %}
+        <li class="card">
+          <strong>{{ t.title }}</strong>
+          <span class="pill todo">✗ À faire</span>
+          <div class="muted">Créée le {{ t.created_at|date:"d/m/Y H:i" }}</div>
+          <div><a href="/detail/{{ t.id }}/">Voir le détail</a></div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Aucune tâche active.</p>
+  {% endif %}
+{% endblock %}
