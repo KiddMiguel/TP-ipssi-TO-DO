@@ -16,6 +16,7 @@ env/
 # OS files
 .DS_Store
 Thumbs.db
+/Doc
 
 # Migrations
 */migrations/*.pyc
